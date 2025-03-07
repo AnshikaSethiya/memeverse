@@ -73,12 +73,12 @@ const Home = () => {
             </section>
 
             {/* newsletter section */}
-            <div className='relative isolate overflow-hidden bg-gray-800 py-16 sm:py-24 lg:py-32'>
+            <div className='bg-gray-400 relative isolate overflow-hidden dark:bg-gray-800 py-16 sm:py-24 lg:py-32'>
               <div className='mx-auto max-w-7xl px-6 lg:px-8'>
                 <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
                   <div className='max-w-xl lg:max-w-lg'>
-                  <h2 className="text-4xl font-semibold tracking-tight text-white">Subscribe to your happiness</h2>
-                    <p className="mt-4 text-lg text-gray-300">
+                  <h2 className="text-4xl font-semibold tracking-tight text-gray-900 dark:text-white">Subscribe to your happiness</h2>
+                    <p className="mt-4 text-lg text-gray-800 dark:text-gray-300">
                       Nostrud amet eu ullamco nisi aute in ad minim nostrud adipisicing velit quis. Duis tempor incididunt
                       dolore.
                     </p>
@@ -107,8 +107,8 @@ const Home = () => {
                       <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
                         <CalendarOutlined aria-hidden="true" style={{color:"white"}} className="size-6" />
                       </div>
-                      <dt className="mt-4 text-base font-semibold text-white">Weekly articles</dt>
-                      <dd className="mt-2 text-base/7 text-gray-400">
+                      <dt className="mt-4 text-base font-semibold text-gray-900 dark:text-white">Weekly memes</dt>
+                      <dd className="mt-2 text-base/7 text-gray-800 dark:text-gray-400">
                         Non laboris consequat cupidatat laborum magna. Eiusmod non irure cupidatat duis commodo amet.
                       </dd>
                     </div>
@@ -116,8 +116,8 @@ const Home = () => {
                       <div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
                         <StopOutlined aria-hidden="true" className="size-6" style={{color:"white"}} />
                       </div>
-                      <dt className="mt-4 text-base font-semibold text-white">No spam</dt>
-                      <dd className="mt-2 text-base/7 text-gray-400">
+                      <dt className="mt-4 text-base font-semibold text-gray-900 dark:text-white">No spam</dt>
+                      <dd className="mt-2 text-base/7 text-gray-800 dark:text-gray-400">
                         Officia excepteur ullamco ut sint duis proident non adipisicing. Voluptate incididunt anim.
                       </dd>
                     </div>
