@@ -2,9 +2,6 @@ import React from 'react';
 import { Card, Avatar, Typography, Row, Col, Divider, Tabs } from 'antd';
 import { UserOutlined, MailOutlined, PhoneOutlined, GlobalOutlined } from '@ant-design/icons';
 
-
-  const { TabPane } = Tabs;
-
 function ProfilePage() {
   const user = { 
     name: "John Doe",

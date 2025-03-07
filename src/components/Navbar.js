@@ -27,31 +27,8 @@ const Navbar = () => {
     { href: '/explore', label: 'Explore' },
     { href: '/leaderboard', label: 'Leaderboard' },
   ];
-
-
   return (
-    // <div>
-    //   <nav className='navbar'>
-    //     <div className='flex flex-row justify-evenly'>
-    //     <img width={50} src="https://img.freepik.com/free-vector/crazy-emoji-fools-day-icon-isolated_24640-133943.jpg?t=st=1741148800~exp=1741152400~hmac=75e94fa503adff8abaa13bd23cc471c6c2626c645e39771ec2489c05414b75a3&w=900" alt="meme logo" />
-    //     <h3>MemeVerse</h3>
-    //     </div>
-
-    //     <div className='flex flex-wrap'>
-    //      <ul>
-    //      <li><Link href="/explore">Explore</Link></li>
-    //      <li><Link href={"/leaderboard"}>Leaderboard</Link></li>
-    //      <li><Link href={"/profile"}>Profile</Link></li>
-         
-    //      </ul>
-    //     </div>
-
-    //     <ul>
-    //       <li><button onClick={toggleDarkMode}>{isDarkMode ? <SunFilled /> : <MoonFilled />}</button></li>
-    //     </ul>
-    //   </nav>
-    // </div>  
-    <nav className="bg-white dark:bg-gray-800 transition-colors duration-300 sm:py-6 md:py-4" style={{boxShadow:'rgba(0, 0, 0, 0.24) 0px 3px 8px'}}>
+    <nav className="bg-white dark:bg-gray-800 transition-colors duration-300 sm:py-6 md:py-4 dark:shadow-xl" style={{boxShadow:'rgba(0, 0, 0, 0.24) 0px 3px 8px'}}>
     <div className="container mx-auto px-4 flex justify-between items-center">
       {/* Logo and Name */}
       <div className="flex items-center">
@@ -77,7 +54,7 @@ const Navbar = () => {
            <button className='profile-button-rounded'>Profile</button>
           {/* </div> */}
         </Link>
-        <button onClick={toggleDarkMode}>{isDarkMode ? <SunFilled /> : <MoonFilled />}</button>
+        <button onClick={toggleDarkMode}>{isDarkMode ? <SunFilled style={{color:"white"}}/> : <MoonFilled />}</button>
       </div>
     </div>
   </nav>

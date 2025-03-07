@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect } from 'react'
-import {Tabs, Card, Avatar, Typography, Row, Col, Divider, Skeleton, Badge} from 'antd'
+import {Tabs, Card, Avatar, Typography, Row, Col, Table, Skeleton, Badge} from 'antd'
 import { motion } from 'framer-motion';
 import useGetMeme from '@/utlis/useGetMeme';
 import { generateUniqueRandomNumbers } from '@/utlis/constants';
@@ -16,14 +16,13 @@ const Leaderboard = () => {
     <Row gutter={[16, 16]} style={{ width: '100%' }}>
       {memes?.slice(0, 10).map((meme, index) => (
         <Col xs={24} sm={12} md={8} lg={6} key={meme.id}>
-          {/* <MemeCard meme={meme} memeDetail={memeDetail} isLoading={isMemeDetailLoading || loading}/> */}
           <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, ease: "easeInOut" }}
             >
                <Badge.Ribbon text={index+1} color='yellow' placement='start'> 
-                <Card className='shadow-md' hoverable cover={
+                <Card className='shadow-lg bg-white dark:bg-gray-800 dark:text-white' hoverable cover={
                 isLoading ? (
                     <Skeleton.Image active />
                     ) : (
@@ -46,6 +45,49 @@ const Leaderboard = () => {
       ))}
     </Row>
   );
+
+  const memeColumns = [
+    {
+      title: 'Rank',
+      key: 'rank',
+     // render: (text, record, index) => index + 1,
+    },
+    {
+      title: 'Meme',
+      dataIndex: 'title',
+      key: 'title',
+    },
+    {
+      title: 'Likes',
+      dataIndex: 'likes',
+      key: 'likes',
+    },
+  ];
+
+  // const creatorColumns = [
+  //   {
+  //     title: 'Rank',
+  //     key: 'rank',
+  //     render: (text, record, index) => index + 1,
+  //   },
+  //   {
+  //     title: 'Creator',
+  //     dataIndex: 'name',
+  //     key: 'name',
+  //     render: (text, record) => (
+  //       <div className="flex items-center">
+  //         <Avatar size={32} src={record.avatar} />
+  //         <span className="ml-2">{text}</span>
+  //       </div>
+  //     ),
+  //   },
+  //   {
+  //     title: 'Followers',
+  //     dataIndex: 'followers',
+  //     key: 'followers',
+  //   },
+  //   // Add other creator columns as needed
+  // ];
 
   const tabs=[
     {
@@ -76,17 +118,17 @@ const Leaderboard = () => {
       {
         key: '2',
         label: 'Top Creators',
-        // children: loading ? (
-        //   <div>Loading...</div>
-        // ) : (
-        //   <motion.div
-        //     initial={{ opacity: 0, y: 20 }}
-        //     animate={{ opacity: 1, y: 0 }}
-        //     transition={{ duration: 0.5, ease: "easeInOut" }}
-        //   >
-        //     {/* <Table dataSource={topCreators} columns={creatorColumns} pagination={false} /> */}
-        //   </motion.div>
-        // ),
+        children: isLoading ? (
+          <div>Loading...</div>
+        ) : (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+          >
+            <Table columns={memeColumns} pagination={false} />
+          </motion.div>
+        ),
       },
 ]
 
@@ -97,7 +139,7 @@ const Leaderboard = () => {
                      Leaderboard</h1>
                      <p className='text-gray-600'>Discover the top memes and top creator of week here!!</p>
              </header>
-             <Card className='shadow-lg rounded-lg bg-white dark:bg-gray-900 transition-colors duration-300'>
+             <Card className='shadow-lg rounded-lg bg-white dark:bg-gray-800 transition-colors duration-300'>
                  <Tabs defaultActiveKey="1" items={tabs} className="text-gray-800 dark:text-white transition-colors duration-300"> 
                  </Tabs>
             </Card>
